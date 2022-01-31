@@ -13,39 +13,57 @@ const post = {
     nested: {
         nested1: 'Nested 1'
     },
-    func: ()=>{
+    func: () => {
         return `${post.title} and ${post.comments}`;
     }
 };
 
 // object can be retued in any order
-console.log({ post })
+// console.log({ post })
 // access object key-pair by dot notation
-console.log({ dotNotation: post.title });
+// console.log({ dotNotation: post.title });
 // access nested object with dot notation 
-console.log({ nestedDotNotation: post.nested.nested1 });
+// console.log({ nestedDotNotation: post.nested.nested1 });
 // access object key-pai by square notation 
-console.log({ sqaureNotation: post['title'] });
+// console.log({ sqaureNotation: post['title'] });
 // access nested object with square notation 
-console.log({ nestedSquareNotation: post['nested']['nested1'] });
+// console.log({ nestedSquareNotation: post['nested']['nested1'] });
 
 // Object destructuring  
-const { title, comments } = post;
-console.log({ destructured: { title, comments } });
+// const { title, comments } = post;
+// console.log({ destructured: { title, comments } });
 
 // Pass by reference  
-const change = (sampleObject) => {
-    sampleObject.title = 'Old Post';
-}
-change(post);
-console.log({title: post.title});
+// const change = (sampleObject) => {
+//     sampleObject.title = 'Old Post';
+// }
+// change(post);
+// console.log({title: post.title});
 
 // iterate over object keys
-for(const key in post){
-    console.log('keys ==>',key)
-}
+// for(const key in post){
+//     console.log('keys ==>',key)
+// }
 
 // function inside object
-console.log({objectFunc: post.func()});
+// console.log({objectFunc: post.func()});
 // ---------------------------------------------------------------- 
 
+// Explicit and Implicit Binding 
+// ----------------------------------------------------------------  
+// const object = {
+//     name: 'ABC',
+//     display: function () {
+//         console.log(this.name);
+//     },
+//     displayWithArrowFunction: () => {
+//         console.log(this.name);
+//     }
+// };
+
+// const anotherObject = {
+//     name: 'XYZ'
+// };
+
+// object.display.call(anotherObject);
+// object.displayWithArrowFunction.call(anotherObject);

@@ -3,20 +3,22 @@
 
 
 // Object Declaration
+
 // 1. store keyvalue pair 
 // 2. unordered data / data retrival is not ordered  
 // 3. keys are unique  
-const post = {
-    title: 'New Post',
-    comments: 20,
-    1: 'Hello World',
-    nested: {
-        nested1: 'Nested 1'
-    },
-    func: () => {
-        return `${post.title} and ${post.comments}`;
-    }
-};
+
+// const post = {
+//     title: 'New Post',
+//     comments: 20,
+//     1: 'Hello World',
+//     nested: {
+//         nested1: 'Nested 1'
+//     },
+//     func: () => {
+//         return `${post.title} and ${post.comments}`;
+//     }
+// };
 
 // object can be retued in any order
 // console.log({ post })
@@ -67,3 +69,16 @@ const post = {
 
 // object.display.call(anotherObject);
 // object.displayWithArrowFunction.call(anotherObject);
+
+// Infinite Currying
+// ---------------------------------------------------------------- 
+
+const Add = (a) => {
+
+    return (b) => {
+        if (b) return Add(a + b);
+        return a;
+    }
+};
+
+console.log(Add(5)(5)(5)(10)());
